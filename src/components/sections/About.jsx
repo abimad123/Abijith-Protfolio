@@ -64,7 +64,7 @@ const About = () => {
 
               <div className="absolute inset-14 rounded-[4rem] overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,0,0,0.5)] group">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop"
+                  src="public/profile.jpeg"
                   alt="Abijith C G"
                   loading="lazy"
                   decoding="async"
