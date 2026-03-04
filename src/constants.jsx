@@ -7,45 +7,33 @@ export const PROJECTS = [
     tags: ['React', 'Firebase', 'Tailwind', 'Node.js'],
     github: 'https://github.com/abimad123/KirpaRep.git',
     live: 'https://kripahomesolutions.vercel.app/',
-    image: 'https://picsum.photos/seed/kirpa/800/450',
+    image: '/projects/kripa.webp',
     caseStudy:
       'Solved disorganized listings by implementing a hierarchical search and filter system, increasing enquiry rates by 40%.'
   },
   {
-    id: 'portfolio-mgmt',
-    title: 'Smart Portfolio Manager',
+    id: 'vaultx',
+    title: 'VaultX - Secure Vault',
     description:
-      'A dynamic financial asset tracker allowing users to manage stocks, gold, and other investments with real-time value calculation.',
-    tags: ['PHP', 'MySQL', 'JavaScript', 'Chart.js'],
-    github: 'https://github.com/abimad123/Investment-Portfolio.git',
-    live: 'https://investsmart.infinityfreeapp.com/',
-    image: 'https://picsum.photos/seed/finance/800/450',
+      'Digital Document Vault with military-grade encryption, JWT authentication, and Cloudinary integration.',
+    tags: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
+    github: 'https://github.com/abimad123/Digital-Document-Vault.git',
+    live: 'https://vaultx.abijith.me/',
+    image: '/projects/vaultx.webp',
     caseStudy:
-      'Created a unified dashboard for disparate asset classes, focusing on mobile-first data visualization.'
+      'Implemented a comprehensive, immutable audit log of every action for security auditing and compliance.'
   },
   {
-    id: 'amazspace',
-    title: 'My Amazspace',
+    id: 'evoting',
+    title: 'Secure E-Voting System',
     description:
-      'E-commerce discovery platform for curated product recommendations with advanced filtering and persistence via Firebase.',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
-    github: 'https://github.com/abimad123/myamazspace',
-    live: 'https://myamazspace.vercel.app',
-    image: 'https://picsum.photos/seed/amaz/800/450',
+      'Robust web-based voting application with comprehensive KYC verification and real-time election management.',
+    tags: ['React', 'Node.js', 'MongoDB', 'Framer Motion'],
+    github: 'https://github.com/abimad123/E-Voting-System.git',
+    live: 'https://evoting.abijith.me/login',
+    image: '/projects/evoting.webp',
     caseStudy:
-      'Implemented high-speed filtering for large product datasets using client-side caching.'
-  },
-  {
-    id: 'amazspace',
-    title: 'My Amazspace',
-    description:
-      'E-commerce discovery platform for curated product recommendations with advanced filtering and persistence via Firebase.',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
-    github: 'https://github.com/abimad123/myamazspace',
-    live: 'https://myamazspace.vercel.app',
-    image: 'https://picsum.photos/seed/amaz/800/450',
-    caseStudy:
-      'Implemented high-speed filtering for large product datasets using client-side caching.'
+      'Engineered secure file storage for IDs using MongoDB GridFS, enforcing strict one-vote-per-person policies.'
   }
 ];
 
