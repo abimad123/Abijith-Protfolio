@@ -121,6 +121,17 @@ const Skills = () => {
       className="py-20 md:py-24 bg-transparent relative overflow-hidden scroll-mt-20 md:scroll-mt-24"
     >
       <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="mb-16 text-center lg:text-left">
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight leading-tight">
+            Technical{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600">
+              Proficiency
+            </span>
+          </h2>
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+            A comprehensive overview of my technical skills, tools, and technologies.
+          </p>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-5 max-w-full mx-auto items-stretch">
           {SKILLS.map((cat, idx) => (
             <SkillCard key={idx} cat={cat} idx={idx} />
