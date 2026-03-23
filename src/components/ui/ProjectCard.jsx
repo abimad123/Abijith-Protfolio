@@ -15,7 +15,7 @@ const ProjectCard = ({ project }) => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = (centerY - y) / 12; // Adjusted for slightly more subtle tilt
+    const rotateX = (centerY - y) / 12; 
     const rotateY = (x - centerX) / 12;
 
     setRotate({ x: rotateX, y: rotateY });
@@ -91,10 +91,10 @@ const ProjectCard = ({ project }) => {
         {/* Content Area - Tighter Padding */}
         <div className="p-6 md:p-7 flex flex-col flex-1 translate-z-30">
           <div className="mb-4 flex items-start justify-between">
-            <h3 className="text-xl md:text-2xl font-black text-white group-hover:text-blue-400 transition-colors duration-500 tracking-tight leading-tight">
+            <h3 className="text-xl md:text-2xl font-black text-white group-hover:text-yellow-500 transition-colors duration-500 tracking-tight leading-tight">
               {project.title}
             </h3>
-            <span className="text-blue-500/10 text-3xl font-black select-none group-hover:text-blue-500/30 transition-colors">
+            <span className="text-yellow-500/10 text-3xl font-black select-none group-hover:text-yellow-500/30 transition-colors">
               /
             </span>
           </div>
@@ -123,7 +123,7 @@ const ProjectCard = ({ project }) => {
                 <a
                   href={project.github}
                   target="_blank"
-                  className="w-8 h-8 glass rounded-lg flex items-center justify-center text-gray-500 hover:text-white hover:bg-white/10 transition-all"
+                  className="w-8 h-8 glass rounded-lg flex items-center justify-center text-white hover:text-white hover:bg-white/10 transition-all"
                 >
                   <i className="fab fa-github text-lg"></i>
                 </a>
@@ -132,17 +132,13 @@ const ProjectCard = ({ project }) => {
                 <a
                   href={project.live}
                   target="_blank"
-                  className="w-8 h-8 glass rounded-lg flex items-center justify-center text-gray-500 hover:text-white hover:bg-white/10 transition-all"
+                  className="w-8 h-8 glass rounded-lg flex items-center justify-center text-white hover:text-yellow hover:bg-white/10 transition-all"
                 >
                   <i className="fas fa-link text-sm"></i>
                 </a>
               )}
             </div>
-            <div className="flex items-center gap-2 text-[8px] font-black uppercase tracking-widest text-gray-600 group-hover:text-blue-500 transition-colors">
-              Case Study{' '}
-              <i className="fas fa-plus scale-75 group-hover:rotate-90 transition-transform duration-500"></i>
-            </div>
-          </div>
+             </div>
         </div>
 
         <div className="absolute -inset-full h-full w-1/2 z-40 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:animate-[shimmer_2.5s_infinite] pointer-events-none" />

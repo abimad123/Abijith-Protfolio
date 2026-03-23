@@ -13,7 +13,7 @@ const Projects = () => {
         <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end mb-16 gap-8 text-center lg:text-left">
           <div className="max-w-2xl">
 
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight leading-tight">
+            <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-[0.95] whitespace-nowrap">
               Crafting{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600">
                 Digital

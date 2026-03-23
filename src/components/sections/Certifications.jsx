@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import React, { useRef, useState } from 'react';
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion';
 import { CERTIFICATIONS } from '../../constants.jsx';
 
-const CertificationCard = ({ cert }) => {
+const CertificationCard = ({ cert, onSelect }) => {
   const cardRef = useRef(null);
 
   // Motion values for smooth 3D
@@ -61,7 +61,7 @@ const CertificationCard = ({ cert }) => {
       <div className="absolute -inset-4 bg-white/5 rounded-[2.5rem] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
       {/* Main Card */}
-      <div className="relative h-[420px] rounded-[2rem] bg-[#030712]/60 backdrop-blur-xl border border-white/5 group-hover:border-white/30 transition-colors duration-500 overflow-hidden shadow-2xl flex flex-col">
+      <div className="relative h-[460px] rounded-[2rem] bg-[#030712]/60 backdrop-blur-xl border border-white/5 group-hover:border-white/30 transition-colors duration-500 overflow-hidden shadow-2xl flex flex-col justify-between">
         {/* Holographic Glare Overlay */}
         <motion.div
           className="pointer-events-none absolute inset-0 z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -74,49 +74,59 @@ const CertificationCard = ({ cert }) => {
           }}
         />
 
+        {/* Dynamic Inner Mesh Background */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]" />
+
         {/* Content Container with translateZ for depth */}
-        <div className="relative flex flex-col h-full p-8 preserve-3d">
-          {/* Top Section: Issuer Badge */}
-          <div className="flex justify-between items-start mb-8 translate-z-20">
-            <div className="px-3 py-1 bg-white/5 border border-white/10 rounded-full">
-              <span className="text-[9px] font-black text-gray-300 uppercase tracking-[0.2em]">
-                {cert.issuer}
-              </span>
-            </div>
-            <div className="flex flex-col items-end">
-              <span className="text-[8px] font-black text-gray-600 uppercase tracking-widest">
-                ID: {cert.id.slice(0, 6)}
-              </span>
-            </div>
-          </div>
+        <div className="relative flex flex-col h-full p-6 md:p-8 preserve-3d">
+          
+        {/* Preview Image */}
+<div
+  className="w-full h-[130px] rounded-2xl border border-white/10 mb-5 overflow-hidden cursor-pointer relative"
+  onClick={() => onSelect(cert)}
+>
+  <img
+    src={cert.image}
+    alt={cert.title}
+    loading="lazy"
+    referrerPolicy="no-referrer"
+    onError={(e) => {
+      e.target.onerror = null;
+      e.target.src =
+        "https://images.unsplash.com/photo-1523289217630-0dd16184af8b?w=400&h=250&fit=crop";
+    }}
+    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+  />
 
-          {/* Visual: Center Icon / Certificate Branding */}
-          <div className="flex-1 flex flex-col items-center justify-center mb-8 translate-z-40">
-            <div className="relative group-hover:scale-110 transition-transform duration-700">
-              {/* Animated rings behind icon */}
-              <div className="absolute inset-0 bg-white/10 rounded-full blur-2xl animate-pulse" />
-              <div className="w-24 h-24 rounded-3xl bg-gradient-to-br from-gray-600/20 to-gray-900/40 border border-white/10 flex items-center justify-center shadow-inner relative z-10 overflow-hidden">
-                <i className="fas fa-award text-4xl text-gray-200 group-hover:text-white group-hover:rotate-12 transition-all duration-500" />
-                {/* Inner shimmer on icon box */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent" />
-              </div>
-            </div>
-          </div>
+  {/* Hover Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+    <span className="text-[10px] font-bold text-white uppercase tracking-widest flex items-center gap-2 bg-black/50 px-3 py-1.5 rounded-full backdrop-blur-md border border-white/10">
+      <i className="fas fa-search-plus"></i> View Certificate
+    </span>
+  </div>
+</div>
 
-          {/* Text Section */}
-          <div className="translate-z-30 text-center">
-            <h3 className="text-xl font-black text-white mb-2 leading-tight tracking-tight group-hover:text-gray-300 transition-colors">
+          {/* 2. Content Info */}
+          <div className="flex-1 flex flex-col translate-z-30 h-full">
+            <h3 className="text-xl md:text-2xl font-black text-white leading-tight tracking-tight group-hover:text-yellow-500 transition-colors mb-1 pr-6 truncate">
               {cert.title}
             </h3>
-            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.3em] mb-6">
-              Issued {cert.date}
-            </p>
+            
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">
+                {cert.issuer}
+              </span>
+              <span className="w-1 h-1 rounded-full bg-gray-700"></span>
+              <span className="text-[9px] font-black text-gray-600 uppercase tracking-[0.2em]">
+                {cert.date}
+              </span>
+            </div>
 
-            <div className="flex flex-wrap justify-center gap-1.5 mb-8">
+            <div className="flex flex-wrap gap-1.5 mb-2 mt-2">
               {cert.skills.slice(0, 3).map((skill) => (
                 <span
                   key={skill}
-                  className="px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.05] text-[8px] font-black text-gray-400 uppercase tracking-widest group-hover:border-white/20 transition-colors"
+                  className="px-2 py-1 rounded-md bg-white/[0.03] border border-white/[0.05] text-[8px] font-bold text-gray-400 uppercase tracking-wider group-hover:border-white/20 transition-colors"
                 >
                   {skill}
                 </span>
@@ -124,35 +134,29 @@ const CertificationCard = ({ cert }) => {
             </div>
           </div>
 
-          {/* Footer: Action - Re-engineered for maximum impact */}
-          <div className="mt-auto translate-z-50">
+          {/* 3. Footer: Verify Button (Fixed Bottom) */}
+          <div className="mt-auto pt-4 translate-z-40 w-full shrink-0 relative pointer-events-auto z-10">
             <a
               href={cert.link}
               target="_blank"
-              className="relative flex items-center justify-center gap-3 w-full py-4 rounded-xl overflow-hidden group/btn"
+              onClick={(e) => e.stopPropagation()}
+              className="relative flex items-center justify-center gap-3 w-full py-3.5 rounded-xl overflow-hidden group/btn bg-white/5 border border-white/10 hover:bg-white hover:border-white transition-all duration-300 pointer-events-auto"
             >
-              {/* Button Background & Border */}
-              <div className="absolute inset-0 bg-white/5 border border-white/10 rounded-xl transition-all duration-300 group-hover/btn:bg-white group-hover/btn:border-white group-hover/btn:shadow-[0_0_25px_rgba(255,255,255,0.2)]" />
-
-              {/* Shimmer Sweep Animation on Hover */}
-              <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent via-black/20 to-transparent group-hover/btn:animate-[shimmer_1.5s_infinite]" />
-
-              <span className="relative z-10 text-[10px] font-black uppercase tracking-[0.3em] text-gray-300 group-hover/btn:text-black transition-colors duration-300">
+              <span className="relative z-10 text-[10px] font-black uppercase tracking-[0.2em] text-gray-300 group-hover/btn:text-black transition-colors duration-300">
                 Verify Credential
               </span>
               <i className="fas fa-external-link-alt relative z-10 text-[10px] text-gray-400 group-hover/btn:text-black group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-all duration-300" />
             </a>
           </div>
         </div>
-
-        {/* Dynamic Inner Mesh Background */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]" />
       </div>
     </motion.div>
   );
 };
 
 const Certifications = () => {
+  const [selectedCert, setSelectedCert] = useState(null);
+
   // Triple the data for seamless infinite loop
   const displayCerts = [
     ...CERTIFICATIONS,
@@ -189,11 +193,70 @@ const Certifications = () => {
         <div className="mask-edges-wide overflow-hidden group/marquee">
           <div className="flex items-stretch gap-8 px-4 animate-marquee-refined group-hover/marquee:pause">
             {displayCerts.map((cert, idx) => (
-              <CertificationCard key={`${cert.id}-${idx}`} cert={cert} />
+              <CertificationCard key={`${cert.id}-${idx}`} cert={cert} onSelect={setSelectedCert} />
             ))}
           </div>
         </div>
       </div>
+
+      {/* Modal Popup */}
+      <AnimatePresence>
+        {selectedCert && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center px-4 py-12"
+          >
+            {/* Backdrop */}
+            <div 
+              className="absolute inset-0 bg-black/80 backdrop-blur-md cursor-pointer"
+              onClick={() => setSelectedCert(null)}
+            />
+
+            {/* Modal Content */}
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="relative w-full max-w-4xl max-h-full bg-gray-900 border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col z-10"
+            >
+              {/* Header */}
+              <div className="flex items-center justify-between p-4 border-b border-white/10 bg-black/50">
+                <h3 className="text-sm md:text-base font-bold text-white">{selectedCert.title}</h3>
+                <button 
+                  onClick={() => setSelectedCert(null)}
+                  className="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+                >
+                  <i className="fas fa-times"></i>
+                </button>
+              </div>
+
+              {/* Image Preview Container */}
+              <div className="relative flex-1 bg-black/50 overflow-auto flex items-center justify-center p-4 min-h-[40vh] md:min-h-[60vh]">
+                <img 
+                  src={selectedCert.image} 
+                  alt={selectedCert.title} 
+                  onError={(e) => { e.target.onerror = null; e.target.src = 'https://images.unsplash.com/photo-1523289217630-0dd16184af8b?w=800&h=600&fit=crop'; }}
+                  className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
+                />
+              </div>
+
+              {/* Footer / Verify Action */}
+              <div className="p-4 bg-black/50 border-t border-white/10 flex justify-end">
+                <a
+                  href={selectedCert.link}
+                  target="_blank"
+                  className="px-6 py-2.5 bg-white text-black text-xs font-black uppercase tracking-widest rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2"
+                >
+                  Verify Credential <i className="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <style>
         {`

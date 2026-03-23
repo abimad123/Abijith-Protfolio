@@ -91,8 +91,8 @@ export const CERTIFICATIONS = [
     issuer: 'Meta (Coursera)',
     date: 'Jan 2025',
     skills: ['HTML', 'CSS', 'JavaScript', 'React'],
-    link: 'https://coursera.org/share/b04fdab7688e49b46467d9a112d91200',
-    image: 'https://picsum.photos/seed/cert1/400/250'
+    link: 'https://drive.google.com/file/d/1aEf9nl9DfcdIO7v7-G_kE26VQ-GOApQv/view?usp=sharing',
+    image: '/certificates/IBM JavaScript Backend.png'
   },
   {
     id: 'ux-design',
@@ -100,8 +100,8 @@ export const CERTIFICATIONS = [
     issuer: 'LinkedIn',
     date: 'Sep 2025',
     skills: ['User Research', 'Design Thinking', 'IA'],
-    link: '#',
-    image: 'https://picsum.photos/seed/cert2/400/250'
+    link: 'https://drive.google.com/file/d/1aEf9nl9DfcdIO7v7-G_kE26VQ-GOApQv/view?usp=sharing',
+    image: '/certificates/uiux.jpg'
   },
   {
     id: 'java-prog',
@@ -109,8 +109,8 @@ export const CERTIFICATIONS = [
     issuer: 'LinkedIn',
     date: 'May 2025',
     skills: ['OOP', 'Arrays', 'Concurrency'],
-    link: '#',
-    image: 'https://picsum.photos/seed/cert3/400/250'
+    link: 'https://drive.google.com/file/d/1aEf9nl9DfcdIO7v7-G_kE26VQ-GOApQv/view?usp=sharing',
+    image: '/certificates/java.jpg'
   }
 ];
 

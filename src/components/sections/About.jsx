@@ -162,14 +162,14 @@ const About = () => {
                   <a
                     href="https://github.com/abimad123"
                     target="_blank"
-                    className="text-gray-600 hover:text-white transition-colors"
+                    className="text-white hover:text-yellow-500 transition-colors"
                   >
                     <i className="fab fa-github text-xl md:text-2xl"></i>
                   </a>
                   <a
                     href="https://linkedin.com/in/abijith-c-g"
                     target="_blank"
-                    className="text-gray-600 hover:text-white transition-colors"
+                    className="text-white hover:text-yellow-500 transition-colors"
                   >
                     <i className="fab fa-linkedin-in text-xl md:text-2xl"></i>
                   </a>
