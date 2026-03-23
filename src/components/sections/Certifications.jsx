@@ -55,13 +55,13 @@ const CertificationCard = ({ cert, onSelect }) => {
         rotateY,
         transformStyle: 'preserve-3d'
       }}
-      className="w-[320px] md:w-[350px] flex-shrink-0 group perspective-1000 py-10"
+      className="w-[340px] md:w-[400px] flex-shrink-0 group perspective-1000 py-6"
     >
       {/* Outer Glow */}
       <div className="absolute -inset-4 bg-white/5 rounded-[2.5rem] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
       {/* Main Card */}
-      <div className="relative h-[460px] rounded-[2rem] bg-[#030712]/60 backdrop-blur-xl border border-white/5 group-hover:border-white/30 transition-colors duration-500 overflow-hidden shadow-2xl flex flex-col justify-between">
+      <div className="relative h-[500px] rounded-[2rem] bg-[#030712]/60 backdrop-blur-xl border border-white/5 group-hover:border-white/30 transition-colors duration-500 overflow-hidden shadow-2xl flex flex-col justify-between">
         {/* Holographic Glare Overlay */}
         <motion.div
           className="pointer-events-none absolute inset-0 z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -82,7 +82,7 @@ const CertificationCard = ({ cert, onSelect }) => {
           
         {/* Preview Image */}
 <div
-  className="w-full h-[130px] rounded-2xl border border-white/10 mb-5 overflow-hidden cursor-pointer relative"
+  className="w-full h-[180px] rounded-2xl border border-white/10 mb-5 overflow-hidden cursor-pointer relative"
   onClick={() => onSelect(cert)}
 >
   <img
@@ -191,7 +191,7 @@ const Certifications = () => {
       <div className="relative w-full">
         {/* Advanced Row Masking */}
         <div className="mask-edges-wide overflow-hidden group/marquee">
-          <div className="flex items-stretch gap-8 px-4 animate-marquee-refined group-hover/marquee:pause">
+          <div className="flex items-stretch gap-6 md:gap-8 px-4 animate-marquee-refined group-hover/marquee:pause">
             {displayCerts.map((cert, idx) => (
               <CertificationCard key={`${cert.id}-${idx}`} cert={cert} onSelect={setSelectedCert} />
             ))}

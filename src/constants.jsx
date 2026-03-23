@@ -86,31 +86,76 @@ export const SKILLS = [
 
 export const CERTIFICATIONS = [
   {
-    id: 'meta-front-end',
-    title: 'Front End Development',
-    issuer: 'Meta (Coursera)',
-    date: 'Jan 2025',
-    skills: ['HTML', 'CSS', 'JavaScript', 'React'],
-    link: 'https://drive.google.com/file/d/1aEf9nl9DfcdIO7v7-G_kE26VQ-GOApQv/view?usp=sharing',
-    image: '/certificates/IBM JavaScript Backend.png'
+    id: 'aws-cloud-solutions',
+    title: 'AWS Cloud Solutions',
+    issuer: 'AWS',
+    date: '2026',
+    skills: ['Cloud Computing', 'AWS', 'Architecture'],
+    link: '#',
+    image: '/certificates/AWS-Cloud-Solutions-certificate.png'
   },
   {
-    id: 'ux-design',
-    title: 'Exploring UX Career',
-    issuer: 'LinkedIn',
-    date: 'Sep 2025',
-    skills: ['User Research', 'Design Thinking', 'IA'],
-    link: 'https://drive.google.com/file/d/1aEf9nl9DfcdIO7v7-G_kE26VQ-GOApQv/view?usp=sharing',
-    image: '/certificates/uiux.jpg'
+    id: 'dev-backend-node',
+    title: 'Developing Back End Apps with Node',
+    issuer: 'IBM',
+    date: '2026',
+    skills: ['Node.js', 'Backend', 'API'],
+    link: '#',
+    image: '/certificates/Developing-Back-End-Apps-with-Node-certificate.png'
+  },
+  {
+    id: 'full-stack-mern',
+    title: 'Full Stack Development with MERN',
+    issuer: 'Professional Certification',
+    date: '2025',
+    skills: ['MongoDB', 'Express', 'React', 'Node.js'],
+    link: '#',
+    image: '/certificates/Full-Stack-Development-with-MERN-certificate.png'
+  },
+  {
+    id: 'git-github',
+    title: 'Getting Started with Git and GitHub',
+    issuer: 'Professional Certification',
+    date: '2025',
+    skills: ['Git', 'GitHub', 'Version Control'],
+    link: '#',
+    image: '/certificates/Getting-Started-with-Git-and-GitHub-certificate.png'
+  },
+  {
+    id: 'ibm-js-backend',
+    title: 'IBM JavaScript Backend',
+    issuer: 'IBM',
+    date: '2025',
+    skills: ['JavaScript', 'Backend', 'Node.js'],
+    link: '#',
+    image: '/certificates/IBM-JavaScript-Backend-certificate.png'
   },
   {
     id: 'java-prog',
     title: 'Java Programming',
-    issuer: 'LinkedIn',
-    date: 'May 2025',
-    skills: ['OOP', 'Arrays', 'Concurrency'],
-    link: 'https://drive.google.com/file/d/1aEf9nl9DfcdIO7v7-G_kE26VQ-GOApQv/view?usp=sharing',
-    image: '/certificates/java.jpg'
+    issuer: 'Professional Certification',
+    date: '2025',
+    skills: ['Java', 'OOP', 'Algorithms'],
+    link: '#',
+    image: '/certificates/Java-Programming-certificate.jpg'
+  },
+  {
+    id: 'ms-ux-design',
+    title: 'Microsoft UX Design',
+    issuer: 'Microsoft',
+    date: '2025',
+    skills: ['UX Design', 'Figma', 'Prototyping'],
+    link: '#',
+    image: '/certificates/Microsoft-UX-Design-certificate.png'
+  },
+  {
+    id: 'app-sec-devops',
+    title: 'Application Security for Developers and DevOps',
+    issuer: 'Professional Certification',
+    date: '2025',
+    skills: ['Security', 'DevOps', 'AppSec'],
+    link: '#',
+    image: '/certificates/Application-Security-for-Developers-and-DevOps-certificate.png'
   }
 ];
 
