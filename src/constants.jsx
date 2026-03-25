@@ -1,3 +1,8 @@
+import { FaDatabase, FaServer, FaNetworkWired, FaSitemap, FaAws } from 'react-icons/fa';
+import { SiFigma, SiReact, SiJavascript, SiTypescript, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiPhp, SiMysql, SiFirebase, SiMongodb, SiGithub, SiDocker, SiVercel, SiPostman, SiFramer } from 'react-icons/si';
+import { MdAnimation, MdWeb, MdApi } from 'react-icons/md';
+import { TbComponents } from 'react-icons/tb';
+
 export const PROJECTS = [
   {
     id: 'kirpa',
@@ -42,45 +47,58 @@ export const SKILLS = [
     title: 'Core CS Fundamentals',
     icon: 'fa-brain',
     skills: [
-      'Data Structures & Algorithms',
-      'Operating Systems',
-      'DBMS',
-      'Computer Networks',
-      'System Design'
+      { name: 'Data Structures & Algorithms', icon: FaDatabase },
+      { name: 'Operating Systems', icon: FaServer },
+      { name: 'DBMS', icon: FaDatabase },
+      { name: 'Computer Networks', icon: FaNetworkWired },
+      { name: 'System Design', icon: FaSitemap }
     ]
   },
   {
     title: 'UI/UX & Product Design',
     icon: 'fa-palette',
     skills: [
-      'Figma',
-      'Wireframing',
-      'Design Systems',
-      'Micro-interactions',
-      'Lottie Animation'
+      { name: 'Figma', icon: SiFigma },
+      { name: 'Wireframing', icon: MdWeb },
+      { name: 'Design Systems', icon: TbComponents },
+      { name: 'Micro-interactions', icon: MdAnimation },
+      { name: 'Lottie Animation', icon: MdAnimation }
     ]
   },
   {
     title: 'Frontend Development',
     icon: 'fa-code',
     skills: [
-      'React.js',
-      'JavaScript',
-      'TypeScript',
-      'Next.js',
-      'Tailwind CSS',
-      'Framer Motion'
+      { name: 'React.js', icon: SiReact },
+      { name: 'JavaScript', icon: SiJavascript },
+      { name: 'TypeScript', icon: SiTypescript },
+      { name: 'Next.js', icon: SiNextdotjs },
+      { name: 'Tailwind CSS', icon: SiTailwindcss },
+      { name: 'Framer Motion', icon: SiFramer }
     ]
   },
   {
     title: 'Backend & Databases',
     icon: 'fa-server',
-    skills: ['Node.js', 'PHP', 'MySQL', 'Firebase', 'RESTful APIs', 'MongoDB']
+    skills: [
+      { name: 'Node.js', icon: SiNodedotjs },
+      { name: 'PHP', icon: SiPhp },
+      { name: 'MySQL', icon: SiMysql },
+      { name: 'Firebase', icon: SiFirebase },
+      { name: 'RESTful APIs', icon: MdApi },
+      { name: 'MongoDB', icon: SiMongodb }
+    ]
   },
   {
     title: 'Tools & Workflow',
     icon: 'fa-screwdriver-wrench',
-    skills: ['Git/GitHub', 'Docker', 'Vercel', 'AWS', 'Postman']
+    skills: [
+      { name: 'Git/GitHub', icon: SiGithub },
+      { name: 'Docker', icon: SiDocker },
+      { name: 'Vercel', icon: SiVercel },
+      { name: 'AWS', icon: FaAws },
+      { name: 'Postman', icon: SiPostman }
+    ]
   }
 ];
 

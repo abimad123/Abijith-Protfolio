@@ -115,19 +115,19 @@ const Contact = () => {
                   <div className="space-y-6 md:space-y-8">
                     {[
                       {
-                        icon: 'fa-envelope',
+                        icon: 'fas fa-envelope',
                         label: 'Inbound Mail',
-                        value: 'abijithcg@example.com',
-                        link: 'mailto:abijithcg@example.com'
+                        value: 'abijithc140@gmail.com',
+                        link: 'https://mail.google.com/mail/?view=cm&fs=1&to=abijithc140@gmail.com'
                       },
                       {
-                        icon: 'fa-linkedin-in',
+                        icon: 'fab fa-linkedin-in',
                         label: 'Network',
                         value: 'abijith-c-g',
                         link: 'https://linkedin.com/in/abijith-c-g'
                       },
                       {
-                        icon: 'fa-location-crosshairs',
+                        icon: 'fas fa-location-crosshairs',
                         label: 'Current Node',
                         value: 'Punjab, India',
                         link: '#'
@@ -136,21 +136,24 @@ const Contact = () => {
                       <a
                         key={i}
                         href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex items-center gap-4 md:gap-6 group/item hover:translate-x-2 transition-transform duration-500"
                       >
                         <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-900/50 border border-white/5 rounded-xl md:rounded-2xl flex items-center justify-center text-gray-500 group-hover/item:bg-white group-hover/item:text-black transition-all">
                           <i
-                            className={`fas ${item.icon} text-lg md:text-xl`}
+                            className={`${item.icon} text-lg md:text-xl`}
                           ></i>
                         </div>
                         <div>
-                          <p className="text-[9px] md:text-[10px] font-black text-gray-600 uppercase tracking-[0.3em] mb-1">
+                          <p className="text-[9px] md:text-[10px] font-black text-gray-600 uppercase tracking-[0.3em] mb-1 group-hover/item:text-gray-400 group-hover/item:translate-x-1 transition-all duration-500">
                             {' '}
                             {item.label}
                           </p>
                           <p className="text-white font-black text-base md:text-lg tracking-tight truncate max-w-[200px] md:max-w-none">
                             {item.value}
                           </p>
+                          <div className="h-[1px] w-0 bg-gradient-to-r from-gray-400 to-white group-hover/item:w-full transition-all duration-700 mt-1 shadow-[0_0_8px_rgba(255,255,255,0.3)]"></div>
                         </div>
                       </a>
                     ))}
@@ -197,7 +200,7 @@ const Contact = () => {
                           onChange={(e) =>
                             setFormState({ ...formState, name: e.target.value })
                           }
-                          placeholder="Your Name"
+                          placeholder="Abijith"
                           className="w-full bg-gray-900/40 border border-white/5 rounded-xl md:rounded-2xl px-5 md:px-6 py-4 md:py-5 text-white focus:outline-none transition-all placeholder:text-gray-700 font-bold tracking-tight z-10 relative"
                         />
 
@@ -221,7 +224,7 @@ const Contact = () => {
                               email: e.target.value
                             })
                           }
-                          placeholder="name@domain.com"
+                          placeholder="abijith@gmail.com"
                           className="w-full bg-gray-900/40 border border-white/5 rounded-xl md:rounded-2xl px-5 md:px-6 py-4 md:py-5 text-white focus:outline-none transition-all placeholder:text-gray-700 font-bold tracking-tight z-10 relative"
                         />
 

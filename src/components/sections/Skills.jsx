@@ -84,30 +84,36 @@ const SkillCard = ({ cat, idx }) => {
         </h3>
 
         <div className="space-y-4">
-          {cat.skills.map((skill, sIdx) => (
-            <div key={skill} className="group/skill">
-              <div className="flex justify-between items-center mb-1.5">
-                <span className="text-[10px] md:text-xs font-bold text-gray-500 group-hover/skill:text-white transition-colors truncate pr-2">
-                  {skill}
-                </span>
-                <div className="flex gap-0.5 shrink-0">
-                  {[...Array(5)].map((_, i) => (
-                    <div
-                      key={i}
-                      className={`w-1 h-1 rounded-full ${i < 5 - (sIdx % 2) ? 'bg-white shadow-[0_0_5px_#ffffff]' : 'bg-gray-800'} transition-all`}
-                    />
-                  ))}
+          {cat.skills.map((skillItem, sIdx) => {
+            const IconComponent = skillItem.icon;
+            return (
+              <div key={skillItem.name} className="group/skill">
+                <div className="flex justify-between items-center mb-1.5">
+                  <div className="flex items-center gap-2 lg:gap-3 truncate pr-2">
+                    <IconComponent className="text-gray-500 text-sm md:text-base group-hover/skill:text-white group-hover/skill:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-500" />
+                    <span className="text-[10px] md:text-xs font-bold text-gray-500 group-hover/skill:text-white transition-colors truncate">
+                      {skillItem.name}
+                    </span>
+                  </div>
+                  <div className="flex gap-0.5 shrink-0">
+                    {[...Array(5)].map((_, i) => (
+                      <div
+                        key={i}
+                        className={`w-1 h-1 rounded-full ${i < 5 - (sIdx % 2) ? 'bg-white shadow-[0_0_5px_#ffffff]' : 'bg-gray-800 group-hover/skill:bg-gray-600'} transition-all duration-300`}
+                      />
+                    ))}
+                  </div>
+                </div>
+                <div className="h-[1px] w-full bg-gray-900 overflow-hidden relative">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${70 + Math.random() * 30}%` }}
+                    className="absolute inset-y-0 left-0 bg-gradient-to-r from-gray-500 to-gray-400 group-hover/skill:from-gray-300 group-hover/skill:to-white group-hover/skill:shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-500"
+                  />
                 </div>
               </div>
-              <div className="h-[1px] w-full bg-gray-900 overflow-hidden relative">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${70 + Math.random() * 30}%` }}
-                  className="absolute inset-y-0 left-0 bg-gradient-to-r from-gray-400 to-white"
-                />
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </motion.div>
@@ -122,14 +128,14 @@ const Skills = () => {
     >
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="mb-16 text-center lg:text-left">
-          <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-[0.95]">
-            Technical{' '}
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight leading-tight">
+            Skills &{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600">
-              Proficiency
+              Technologies
             </span>
           </h2>
           <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-            A comprehensive overview of my technical skills, tools, and technologies.
+            A comprehensive overview of my technical skills, tools, and technologies I work with.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-5 max-w-full mx-auto items-stretch">
