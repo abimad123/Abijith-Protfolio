@@ -161,7 +161,7 @@ const App = () => {
 
           {/* Background Branding Watermark */}
           <div className="absolute -bottom-10 -right-10 opacity-[0.02] pointer-events-none select-none">
-            <span className="text-[15vw] font-black tracking-tighter text-white">
+            <span className="text-[15vw] font-black tracking-wide text-white">
               ACG
             </span>
           </div>

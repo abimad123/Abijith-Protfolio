@@ -128,7 +128,7 @@ const Skills = () => {
     >
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="mb-16 text-center lg:text-left">
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight leading-tight">
+          <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-wide leading-[0.95] whitespace-nowrap">
             Skills &{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600">
               Technologies

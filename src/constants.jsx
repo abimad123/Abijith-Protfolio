@@ -39,6 +39,30 @@ export const PROJECTS = [
     image: '/projects/evoting.webp',
     caseStudy:
       'Engineered secure file storage for IDs using MongoDB GridFS, enforcing strict one-vote-per-person policies.'
+  },
+  {
+    id: 'smart-portfolio',
+    title: 'Smart Portfolio – Wealth Management Dashboard',
+    description:
+      'A premium financial dashboard and wealth management application that allows investors to track assets, monitor real-time stocks and crypto, and make data-driven investment decisions.',
+    tags: ['PHP', 'MySQL', 'JavaScript', 'Chart.js', 'TradingView', 'Bootstrap'],
+    github: 'https://github.com/abimad123/Investment-Portfolio',
+    live: null,
+    image: '/projects/PortfilioManagement.png',
+    caseStudy:
+      'Implemented a bento grid dashboard layout with real-time tracking for stocks and crypto using TradingView hooks.'
+  },
+  {
+    id: 'myamazspace',
+    title: 'MyAmazspace – Affiliate Product Recommendation Platform',
+    description:
+      'A product recommendation platform built for affiliate marketing, featuring product filtering, search, and category-based browsing.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
+    github: 'https://github.com/abimad123/MyAmazspace',
+    live: 'https://myamazspace.vercel.app/',
+    image: '/projects/myamazspace.png',
+    caseStudy:
+      'Optimized affiliate link conversion by implementing a category-based browsing system and robust product filtering.'
   }
 ];
 

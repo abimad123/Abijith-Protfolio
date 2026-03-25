@@ -79,39 +79,39 @@ const CertificationCard = ({ cert, onSelect }) => {
 
         {/* Content Container with translateZ for depth */}
         <div className="relative flex flex-col h-full p-6 md:p-8 preserve-3d">
-          
-        {/* Preview Image */}
-<div
-  className="w-full h-[180px] rounded-2xl border border-white/10 mb-5 overflow-hidden cursor-pointer relative"
-  onClick={() => onSelect(cert)}
->
-  <img
-    src={cert.image}
-    alt={cert.title}
-    loading="lazy"
-    referrerPolicy="no-referrer"
-    onError={(e) => {
-      e.target.onerror = null;
-      e.target.src =
-        "https://images.unsplash.com/photo-1523289217630-0dd16184af8b?w=400&h=250&fit=crop";
-    }}
-    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-  />
 
-  {/* Hover Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-    <span className="text-[10px] font-bold text-white uppercase tracking-widest flex items-center gap-2 bg-black/50 px-3 py-1.5 rounded-full backdrop-blur-md border border-white/10">
-      <i className="fas fa-search-plus"></i> View Certificate
-    </span>
-  </div>
-</div>
+          {/* Preview Image */}
+          <div
+            className="w-full h-[180px] rounded-2xl border border-white/10 mb-5 overflow-hidden cursor-pointer relative"
+            onClick={() => onSelect(cert)}
+          >
+            <img
+              src={cert.image}
+              alt={cert.title}
+              loading="lazy"
+              referrerPolicy="no-referrer"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src =
+                  "https://images.unsplash.com/photo-1523289217630-0dd16184af8b?w=400&h=250&fit=crop";
+              }}
+              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+
+            {/* Hover Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+              <span className="text-[10px] font-bold text-white uppercase tracking-widest flex items-center gap-2 bg-black/50 px-3 py-1.5 rounded-full backdrop-blur-md border border-white/10">
+                <i className="fas fa-search-plus"></i> View Certificate
+              </span>
+            </div>
+          </div>
 
           {/* 2. Content Info */}
           <div className="flex-1 flex flex-col translate-z-30 h-full">
             <h3 className="text-xl md:text-2xl font-black text-white leading-tight tracking-tight group-hover:text-yellow-500 transition-colors mb-1 pr-6 truncate">
               {cert.title}
             </h3>
-            
+
             <div className="flex items-center gap-2 mb-3">
               <span className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">
                 {cert.issuer}
@@ -174,7 +174,7 @@ const Certifications = () => {
 
       <div className="container mx-auto px-6 mb-16 relative z-10">
         <div className="max-w-4xl">
-          <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-[0.95]">
+          <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-wide leading-[0.95]">
             Milestones{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-500">
               &
@@ -209,7 +209,7 @@ const Certifications = () => {
             className="fixed inset-0 z-[100] flex items-center justify-center px-4 py-12"
           >
             {/* Backdrop */}
-            <div 
+            <div
               className="absolute inset-0 bg-black/80 backdrop-blur-md cursor-pointer"
               onClick={() => setSelectedCert(null)}
             />
@@ -225,7 +225,7 @@ const Certifications = () => {
               {/* Header */}
               <div className="flex items-center justify-between p-4 border-b border-white/10 bg-black/50">
                 <h3 className="text-sm md:text-base font-bold text-white">{selectedCert.title}</h3>
-                <button 
+                <button
                   onClick={() => setSelectedCert(null)}
                   className="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
                 >
@@ -235,9 +235,9 @@ const Certifications = () => {
 
               {/* Image Preview Container */}
               <div className="relative flex-1 bg-black/50 overflow-auto flex items-center justify-center p-4 min-h-[40vh] md:min-h-[60vh]">
-                <img 
-                  src={selectedCert.image} 
-                  alt={selectedCert.title} 
+                <img
+                  src={selectedCert.image}
+                  alt={selectedCert.title}
                   onError={(e) => { e.target.onerror = null; e.target.src = 'https://images.unsplash.com/photo-1523289217630-0dd16184af8b?w=800&h=600&fit=crop'; }}
                   className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
                 />

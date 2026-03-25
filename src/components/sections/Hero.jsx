@@ -41,7 +41,7 @@ const Hero = () => {
           transition: 'transform 0.2s ease-out'
         }}
       >
-        <span className="text-[60vw] md:text-[40vw] font-black tracking-tighter text-white leading-none">
+        <span className="text-[60vw] md:text-[40vw] font-black tracking-wide text-white leading-none">
           ACG
         </span>
       </div>
@@ -73,7 +73,7 @@ const Hero = () => {
 
 
         <div className="relative mb-8 md:mb-10 group translate-z-50">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter text-white leading-[1.25] md:leading-[1.15] inline-block">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-wide text-white leading-[1.25] md:leading-[1.15] inline-block">
             <span className="block animate-fade-in-up [animation-delay:200ms] drop-shadow-[0_0_15px_rgba(0,0,0,8)]">
               Engineering
             </span>
