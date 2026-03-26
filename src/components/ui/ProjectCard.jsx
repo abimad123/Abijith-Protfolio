@@ -58,7 +58,7 @@ const ProjectCard = ({ project }) => {
         />
 
         {/* Visual Container (Compact Image) */}
-        <div className="relative aspect-[16/9] overflow-hidden translate-z-10">
+        <div className="relative aspect-[28/14] overflow-hidden translate-z-10">
           <img
             src={project.image}
             alt={project.title}
@@ -89,17 +89,17 @@ const ProjectCard = ({ project }) => {
         </div>
 
         {/* Content Area - Tighter Padding */}
-        <div className="p-6 md:p-7 flex flex-col flex-1 translate-z-30">
-          <div className="mb-4 flex items-start justify-between">
-            <h3 className="text-xl md:text-2xl font-black text-white group-hover:text-yellow-500 transition-colors duration-500 tracking-tight leading-tight">
+        <div className="p-5 md:p-6 flex flex-col flex-1 translate-z-30">
+          <div className="mb-3 flex items-start justify-between">
+            <h3 className="text-lg md:text-xl font-black text-white group-hover:text-yellow-500 transition-colors duration-500 tracking-tight leading-tight">
               {project.title}
             </h3>
-            <span className="text-yellow-500/10 text-3xl font-black select-none group-hover:text-yellow-500/30 transition-colors">
+            <span className="text-yellow-500/10 text-2xl font-black select-none group-hover:text-yellow-500/30 transition-colors">
               /
             </span>
           </div>
 
-          <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
+          <p className="text-gray-400 text-[13px] leading-relaxed mb-4 flex-grow line-clamp-2">
             {project.description}
           </p>
 
@@ -117,7 +117,7 @@ const ProjectCard = ({ project }) => {
           )}
 
           {/* Bottom Controls - Tighter spacing */}
-          <div className="mt-6 pt-5 border-t border-gray-800/50 flex items-center justify-between">
+          <div className="mt-4 pt-4 border-t border-gray-800/50 flex items-center justify-between">
             <div className="flex gap-3 translate-z-50">
               {project.github && (
                 <a

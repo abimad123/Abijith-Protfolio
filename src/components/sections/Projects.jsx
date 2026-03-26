@@ -47,16 +47,14 @@ const Projects = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end mb-16 gap-8 text-center lg:text-left">
           <div className="max-w-2xl">
-            <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-none">
+            <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-none whitespace-nowrap">
               Crafting{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600">
-                Digital
-              </span>{' '}
-              Excellence.
+                Digital Excellence.
+              </span>
             </h2>
-            <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-              A curated showcase of high-performance digital solutions across
-              multiple industries.
+            <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-none mx-auto lg:mx-0 whitespace-nowrap">
+              A curated showcase of high-performance digital solutions across multiple industries.
             </p>
           </div>
 
@@ -103,13 +101,13 @@ const Projects = () => {
         {/* Horizontal Scroll Container */}
         <div 
           ref={scrollRef}
-          className="flex overflow-x-auto gap-6 md:gap-8 pb-12 no-scrollbar snap-x snap-mandatory cursor-grab active:cursor-grabbing"
+          className="flex overflow-x-auto gap-5 md:gap-6 pb-12 no-scrollbar snap-x snap-mandatory cursor-grab active:cursor-grabbing"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {PROJECTS.map((project, idx) => (
             <motion.div
               key={project.id}
-              className="flex-none w-[280px] sm:w-[350px] md:w-[400px] snap-center"
+              className="flex-none w-[280px] sm:w-[320px] md:w-[360px] snap-center"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
