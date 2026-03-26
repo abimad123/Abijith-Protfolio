@@ -167,12 +167,12 @@ const Certifications = () => {
   return (
     <section
       id="certifications"
-      className="py-32 bg-transparent overflow-hidden relative scroll-mt-24"
+      className="w-screen relative left-1/2 -translate-x-1/2 py-32 bg-transparent overflow-hidden scroll-mt-24"
     >
       {/* Background Decor */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[400px] bg-white/5 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="container mx-auto px-6 mb-16 relative z-10">
+      <div className="mx-auto max-w-[1400px] w-full px-4 md:px-6 mb-16 relative z-10">
         <div className="max-w-4xl">
           <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-wide leading-[0.95]">
             Milestones{' '}

@@ -42,9 +42,9 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-20 md:py-32 bg-transparent scroll-mt-20 md:scroll-mt-24 overflow-hidden"
+      className="w-screen relative left-1/2 -translate-x-1/2 py-20 md:py-32 bg-transparent scroll-mt-20 md:scroll-mt-24 overflow-hidden"
     >
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="mx-auto max-w-[1400px] w-full px-4 md:px-6">
         <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end mb-16 gap-8 text-center lg:text-left">
           <div className="max-w-2xl">
             <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-none whitespace-nowrap">
@@ -98,29 +98,32 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Horizontal Scroll Container Wrapper */}
-        <div className="relative">
-          {/* Right edge fade gradient for smooth cut-off */}
-          <div className="absolute top-0 bottom-0 right-0 w-12 md:w-24 bg-gradient-to-l from-[#030712] to-transparent z-10 pointer-events-none md:-mr-6"></div>
-          
-          <div 
-            ref={scrollRef}
-            className="flex overflow-x-auto gap-5 md:gap-6 pt-10 pb-16 px-4 -mx-4 no-scrollbar snap-x snap-mandatory cursor-grab active:cursor-grabbing"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            {PROJECTS.map((project, idx) => (
-              <motion.div
-                key={project.id}
-                className="flex-none w-[280px] sm:w-[320px] md:w-[360px] snap-center"
+      </div>
+
+      {/* Full-width Carousel Wrapper */}
+      <div className="relative w-full overflow-hidden mt-8 md:mt-12">
+        {/* Left edge fade gradient */}
+        <div className="absolute top-0 bottom-0 left-0 w-8 md:w-32 bg-gradient-to-r from-[#030712] to-transparent z-10 pointer-events-none"></div>
+        {/* Right edge fade gradient */}
+        <div className="absolute top-0 bottom-0 right-0 w-8 md:w-32 bg-gradient-to-l from-[#030712] to-transparent z-10 pointer-events-none"></div>
+        
+        <div 
+          ref={scrollRef}
+          className="flex overflow-x-auto w-full gap-5 md:gap-6 pt-10 pb-16 px-6 md:px-[60px] lg:px-[100px] no-scrollbar snap-x snap-mandatory cursor-grab active:cursor-grabbing"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {PROJECTS.map((project, idx) => (
+            <motion.div
+              key={project.id}
+              className="flex-none w-[280px] sm:w-[320px] md:w-[360px] snap-center"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
             >
-                <ProjectCard project={project} />
-              </motion.div>
-            ))}
-          </div>
+              <ProjectCard project={project} />
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
