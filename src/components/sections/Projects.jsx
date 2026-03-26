@@ -98,24 +98,29 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Horizontal Scroll Container */}
-        <div 
-          ref={scrollRef}
-          className="flex overflow-x-auto gap-5 md:gap-6 pb-12 no-scrollbar snap-x snap-mandatory cursor-grab active:cursor-grabbing"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          {PROJECTS.map((project, idx) => (
-            <motion.div
-              key={project.id}
-              className="flex-none w-[280px] sm:w-[320px] md:w-[360px] snap-center"
+        {/* Horizontal Scroll Container Wrapper */}
+        <div className="relative">
+          {/* Right edge fade gradient for smooth cut-off */}
+          <div className="absolute top-0 bottom-0 right-0 w-12 md:w-24 bg-gradient-to-l from-[#030712] to-transparent z-10 pointer-events-none md:-mr-6"></div>
+          
+          <div 
+            ref={scrollRef}
+            className="flex overflow-x-auto gap-5 md:gap-6 pt-10 pb-16 px-4 -mx-4 no-scrollbar snap-x snap-mandatory cursor-grab active:cursor-grabbing"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {PROJECTS.map((project, idx) => (
+              <motion.div
+                key={project.id}
+                className="flex-none w-[280px] sm:w-[320px] md:w-[360px] snap-center"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
             >
-              <ProjectCard project={project} />
-            </motion.div>
-          ))}
+                <ProjectCard project={project} />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
