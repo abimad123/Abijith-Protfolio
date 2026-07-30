@@ -5,13 +5,40 @@ import { TbComponents } from 'react-icons/tb';
 
 export const PROJECTS = [
   {
+    id: 'pmrs',
+    title: 'PMRS – Performance Monitoring & Remedial System',
+    description:
+      'A modern multi-tenant School SaaS platform designed to monitor student academic performance, identify slow learners, and streamline remedial education through analytics-driven insights.',
+    tags: ['Laravel', 'React', 'Tailwind CSS', 'MySQL', 'Multi-Tenant', 'REST API'],
+    github: 'https://github.com/abimad123/PerformanceMonitoringANDRemedialSystem',
+    live: 'https://pmrs.abijith.me',
+    image: '/projects/pmrs.png',
+    caseStudy:
+      'Built a scalable multi-tenant education platform featuring role-based access, performance analytics, attendance, marks management, and remedial learning workflows with future AI-powered recommendations.',
+    featured: true,
+    features: [
+      'Multi-Tenant School Architecture',
+      'Role-Based Authentication',
+      'Student & Teacher Management',
+      'Attendance Management',
+      'Subject Management',
+      'Marks Management',
+      'Performance Monitoring',
+      'Slow Learner Identification',
+      'Remedial Management',
+      'Reports & Analytics',
+      'Responsive React SPA',
+      'Modern Dashboard UI'
+    ]
+  },
+  {
     id: 'kirpa',
     title: 'Kirpa Home Solutions',
     description:
       'A full-scale product catalog for hardware and appliances. Features real-time inventory management, admin dashboard, and automated enquiry systems.',
     tags: ['React', 'Firebase', 'Tailwind', 'Node.js'],
-    github: 'https://github.com/abimad123/KirpaRep.git',
-    live: 'https://kripahomesolutions.vercel.app/',
+    github: 'https://github.com/abimad123/kripaHomeSolutions.git',
+    live: 'https://kripahomesolutions.abijith.me/',
     image: '/projects/kripa.webp',
     caseStudy:
       'Solved disorganized listings by implementing a hierarchical search and filter system, increasing enquiry rates by 40%.'
